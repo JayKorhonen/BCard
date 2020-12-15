@@ -2,37 +2,48 @@ import { COLORS } from './colors';
 
 export const STYLES = {
     container: {
-        flex: 1,
-        backgroundColor: COLORS.background
+        alignItems: 'center'
     },
-    fullCard: {
-        flex: 1,
-        marginHorizontal: 15,
-        marginBottom: 15,
-        backgroundColor: 'white',
-        borderRadius: 15,
-        borderColor: COLORS.secondary,
-        borderWidth: 5
+    backButtonContainer: {
+        marginLeft: 20,
+        marginTop: 20,
+        flexDirection: 'row'
+    },
+    backButton: {
+        fontSize: 20,
+        color: COLORS.primary,
+        fontWeight: 'bold'
+    },
+    qrBorder: {
+        borderStyle: 'dashed',
+        borderRadius: 1,
+        borderWidth: 2,
+        borderColor: COLORS.primary
     },
     card: {
-        marginHorizontal: 15,
         marginVertical: 20,
-        backgroundColor: 'white',
-        borderRadius: 15,
-        borderColor: COLORS.primary,
-        borderWidth: 5
+        backgroundColor: 'white'
+    },
+    buttonHeader: {
+        marginVertical: 100
     },
     header: {
         alignSelf: 'center',
-        fontSize: 40,
+        fontSize: 35,
         color: COLORS.primary,
         fontWeight: 'bold',
         marginVertical: 15
     },
     form: {
-        flex: 1,
-        flexDirection: 'column',
         marginVertical: 15
+    },
+    slide: {
+        flex: 1
+    },
+    save: {
+        marginHorizontal: 75,
+        marginTop: 25,
+        alignItems: 'center'
     },
     textInput: {
         marginVertical: 10,
@@ -40,21 +51,26 @@ export const STYLES = {
         borderWidth: 1,
         borderRadius: 5,
         paddingLeft: 5,
-        paddingVertical: 5,
+        paddingVertical: 10,
         marginHorizontal: 25,
     },
-    button: {
+    buttonPrimary: {
+        borderColor: COLORS.primary,
         paddingVertical: 10,
         paddingHorizontal: 25,
         borderWidth: 2,
         borderRadius: 10
     },
-    buttonPrimary: {
-        borderColor: COLORS.primary
+    bCardButton: {
+        borderColor: COLORS.primary,
+        paddingVertical: 10,
+        borderWidth: 2,
+        borderRadius: 10
     },
     buttonText: {
         color: COLORS.primary,
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        textAlign: 'center'
     },
     cardBody: {
         color: COLORS.primary,
@@ -66,8 +82,7 @@ export const STYLES = {
     instructionsContainer: {
         alignItems: 'center',
         marginVertical: 20,
-        marginHorizontal: 10,
-        flex: 1
+        marginHorizontal: 25
     },
     instructions: {
         color: COLORS.primary,
@@ -75,13 +90,15 @@ export const STYLES = {
         fontWeight: 200
     },
     bodyHeader: {
-        color: COLORS.primary,
-        fontSize: 28,
-        fontWeight: 'bold'
+        color: COLORS.grey,
+        fontSize: 22,
+        lineHeight: 40,
+        textAlign: 'center'
     },
     bodyText: {
         color: COLORS.primary,
-        alignSelf: 'flex-start',
+        alignSelf: 'center',
+        textAlign: 'center',
         fontSize: 20,
         marginTop: 15
     }

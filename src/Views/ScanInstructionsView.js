@@ -1,8 +1,9 @@
 import React, {useEffect, useState} from 'react';
 import {View, Text, Button, Dimensions, StyleSheet, TouchableOpacity} from 'react-native';
 import {BarCodeScanner, BarCodeScannerResult} from 'expo-barcode-scanner';
-import BarcodeMask from 'react-native-barcode-mask';
 import {STYLES} from '../Styles/styles';
+import { MaterialCommunityIcons } from '@expo/vector-icons';
+import { COLORS } from '../Styles/colors';
 
 const finderWidth = 280;
 const finderHeight = 230;
@@ -18,20 +19,20 @@ const ScanInstructionsView = ({navigation}) => {
     
     return (
         <View style={STYLES.container}>
-            <View style={STYLES.card}>
-                <Text style={STYLES.header}>BCard Scanner</Text>
-            </View>
-            <View style={STYLES.fullCard}>
-            <View style={STYLES.instructionsContainer}>
-                <Text style={STYLES.bodyHeader}>Scanner Instructions</Text>
-                <Text style={[STYLES.bodyText]}>{`When a BCard Code is scanned, it is automatically added to your wallet!`}</Text>
-                <Text style={[STYLES.bodyText, {fontWeight: 'bold'}]}>{"To remove the card:"}</Text>
-                <Text style={[STYLES.bodyText]}>{`1) Navigate to the wallet tab\n2) Scroll through and find the card you wish to discard\n3) Click on it to view the card's details\n4) Select 'Remove'`}</Text>
-            </View>
-            <TouchableOpacity style={[STYLES.button, STYLES.buttonPrimary, styles.scan]} onPress={() => navigation.navigate('QRCodeScan')}>
-                <Text style={STYLES.buttonText}>Scan Now</Text>
+            <TouchableOpacity
+                onPress={() => navigation.navigate('Scan')}
+            >
+                <View style={[STYLES.buttonHeader, {marginBottom: 100}]}>
+                    <View style={styles.camera}>
+                        <MaterialCommunityIcons name="camera-outline" size={50} color='white' />
+                    </View>
+                </View>
+                <View>
+                    <View style={STYLES.instructionsContainer}>
+                        <Text style={[STYLES.bodyHeader]}>Tap to scan someone's business card or code. You can always view or delete cards in your wallet later.</Text>
+                    </View>
+                </View>
             </TouchableOpacity>
-            </View>
         </View>
     )
 }
@@ -53,8 +54,16 @@ const styles = StyleSheet.create({
     },
     scan: {
         marginHorizontal: 75,
-        marginBottom: 30,
+        marginTop: 50,
         alignItems: 'center'
+    },
+    camera: {
+        justifyContent: 'center',
+        alignItems: 'center',
+        backgroundColor: COLORS.primary,
+        marginHorizontal: 135,
+        borderRadius: 20,
+        paddingVertical: 5
     }
 });
 

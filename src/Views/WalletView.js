@@ -6,10 +6,7 @@ import { STYLES } from '../Styles/styles';
 const WalletView = () => {
     return (
         <View style={STYLES.container}>
-            <View style={STYLES.card}>
-                <Text style={STYLES.header}>Wallet</Text>
-            </View>
-            <View style={STYLES.fullCard}>
+            <View style={{marginBottom: 25}}>
                 <Wallet/>
             </View>
         </View>
